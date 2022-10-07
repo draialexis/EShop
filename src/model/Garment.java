@@ -1,5 +1,7 @@
 package model;
 
+import util.Size;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

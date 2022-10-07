@@ -1,6 +1,7 @@
 package data;
 
 import model.*;
+import util.Size;
 
 public class Stub implements Loadable {
 

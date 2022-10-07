@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39201d7d-d87b-4c10-b0b0-e462b4f0b033" name="Changes" comment=":truck: Set up main window">
-      <change afterPath="$PROJECT_DIR$/src/data/Loadable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/Stub.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Garment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Perfume.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Shop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Size.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="39201d7d-d87b-4c10-b0b0-e462b4f0b033" name="Changes" comment=":construction: Set up View and VM" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,11 +35,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="viewmodel" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="JFX" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="launcher.Launcher" />
@@ -82,7 +79,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665143741578</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=":necktie: Code the model">
+      <created>1665145559911</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665145559911</updated>
+    </task>
+    <task id="LOCAL-00004" summary=":construction: Set up View and VM">
+      <created>1665149304635</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665149304635</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,6 +109,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value=":truck: Set up main window" />
-    <option name="LAST_COMMIT_MESSAGE" value=":truck: Set up main window" />
+    <MESSAGE value=":necktie: Code the model" />
+    <MESSAGE value=":construction: Set up View and VM" />
+    <option name="LAST_COMMIT_MESSAGE" value=":construction: Set up View and VM" />
   </component>
 </project>

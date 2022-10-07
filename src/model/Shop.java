@@ -1,5 +1,7 @@
 package model;
 
+import data.Stub;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
