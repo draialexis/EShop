@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <VBox fx:id="formHBox">
+        <HBox>
+            <Label text="name:"/>
+            <TextField fx:id="nameTF"/>
+        </HBox>
+        <HBox>
+            <Label text="price:"/>
+            <TextField fx:id="priceTF"/>
+        </HBox>
+    </VBox>
+    <FlowPane alignment="BOTTOM_CENTER" hgap="10.0">
+        <Button defaultButton="true" onAction="#clickConfirm" text="OK"/>
+        <Button cancelButton="true" onAction="#clickCancel" text="Cancel"/>
+    </FlowPane>
+</AnchorPane>

@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39201d7d-d87b-4c10-b0b0-e462b4f0b033" name="Changes" comment=":construction: Set up View and VM" />
+    <list default="true" id="39201d7d-d87b-4c10-b0b0-e462b4f0b033" name="Changes" comment=":construction: Set up View and VM">
+      <change afterPath="$PROJECT_DIR$/resources/fxml/ProductCreationWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ProductCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ProductCreationWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EShop/view/MainWindow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EShop/view/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EShop/view/MainWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EShop/viewmodel/ShopVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EShop/viewmodel/ShopVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Garment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Garment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/GarmentVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/GarmentVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/ProductVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ProductVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/ShopVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ShopVM.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,13 +30,25 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/EShop.iml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/data/Stub.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/model/Garment.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/model/Perfume.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/model/Product.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/model/Shop.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/view/MainWindow.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/view/ProductCell.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/viewmodel/ProductVM.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/viewmodel/ShopVM.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -31,16 +60,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="viewmodel" />
@@ -93,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665149304635</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=":construction: Set up View and VM">
+      <created>1665149326100</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665149326100</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

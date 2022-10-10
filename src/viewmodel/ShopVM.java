@@ -4,32 +4,30 @@ import data.Stub;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ReadOnlyListProperty;
 import javafx.beans.property.SimpleListProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.Perfume;
 import model.Shop;
 
-public class ShopVM {
+import java.beans.IndexedPropertyChangeEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
-    private Shop model;
+public class ShopVM implements PropertyChangeListener {
 
     private final ObservableList<ProductVM> productsVMObs = FXCollections.observableArrayList();
     private final ListProperty<ProductVM> productsVM = new SimpleListProperty<>(productsVMObs);
-    public ObservableList<ProductVM> getProductsVM() {return FXCollections.unmodifiableObservableList(productsVM.get());}
-    public ReadOnlyListProperty<ProductVM> productsVMProperty() {return productsVM;}
+
+    public ObservableList<ProductVM> getProductsVM() {
+        return FXCollections.unmodifiableObservableList(productsVM.get());
+    }
+
+    public ReadOnlyListProperty<ProductVM> productsVMProperty() {
+        return productsVM;
+    }
 
     public ShopVM() {
-//        model = new Shop();
-        model = new Stub().load();
-        model.getProducts().forEach(p -> {
-            ProductVM productVM = new ProductVM(p.getName(), p.getPrice());
-            if(p instanceof Perfume) {
-//                PerfumeVM perfumeVM = (PerfumeVM) productVM;
-//                ... foreach... perfumeVM.addSmell
-            }
-//            productsVMObs.add
-        });
+        Shop model = new Stub().load();
+        model.getProducts().forEach(p -> productsVMObs.add(new ProductVM(p.getName(), p.getPrice())));
     }
 
     public void removeProduct(ProductVM productVM) {
@@ -41,5 +39,16 @@ public class ShopVM {
     }
 
     public void addPerfumeVM(PerfumeVM perfumeVM) {
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        if (evt.getPropertyName().equals(Shop.PROP_SHOP)) {
+            ProductVM pvm = ((ProductVM) evt.getNewValue());
+            productsVMObs.add(
+                    ((IndexedPropertyChangeEvent) evt).getIndex()
+                    , new ProductVM(pvm.getName(), pvm.getPrice())
+            );
+        }
     }
 }

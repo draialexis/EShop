@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -14,9 +11,9 @@
         <VBox>
             <!--            drop down menu (choose category)-->
             <ListView fx:id="productsVMLV"/>
-            <Button onAction="#addGarment" text="Add garment"/>
-            <Button onAction="#addPerfume" text="Add perfume"/>
-            <Button onAction="#removeProduct" text="Remove product"/>
+            <Button onAction="#clickAddGarment" text="Add garment"/>
+            <Button onAction="#clickAddPerfume" text="Add perfume"/>
+            <Button onAction="#clickRemoveProduct" text="Remove product"/>
         </VBox>
     </center>
     <right>

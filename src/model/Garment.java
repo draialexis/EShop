@@ -24,17 +24,19 @@ public class Garment extends Product {
         sizes.add(size);
     }
 
-    public void addAllSizes() {
-        sizes.addAll(Arrays.asList(Size.values()));
-    }
-
-
     public List<Size> getSizes() {
         return Collections.unmodifiableList(sizes);
     }
 
     public void removeSize(Size size) {
         sizes.remove(size);
+    }
+
+
+
+
+    public void addAllSizes() {
+        sizes.addAll(Arrays.asList(Size.values()));
     }
 }
 

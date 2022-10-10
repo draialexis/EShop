@@ -1,22 +1,27 @@
 package view;
 
+import com.sun.scenario.effect.impl.sw.java.JSWBlend_SRC_OUTPeer;
 import javafx.beans.property.Property;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
-import javafx.util.StringConverter;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.converter.NumberStringConverter;
 import viewmodel.GarmentVM;
 import viewmodel.PerfumeVM;
 import viewmodel.ProductVM;
 import viewmodel.ShopVM;
 
-import java.util.List;
+import java.io.IOException;
 
 public class MainWindow {
+
+    private final static int GARMENT = 0;
+    private final static int PERFUME = 1;
     @FXML
     private HBox detailHBox;
     @FXML
@@ -29,33 +34,81 @@ public class MainWindow {
     private ShopVM shopVM;
 
     @FXML
-    private void addGarment() {
-        GarmentVM garmentVM = null;
-        // open a new window, get the input
-        shopVM.addGarmentVM(garmentVM);
+    private void clickAddGarment() {
+        prepareCreationWindow(GARMENT);
     }
 
     @FXML
-    private void addPerfume() {
-        PerfumeVM perfumeVM = null;
-        // open a new window, get the input
-        shopVM.addPerfumeVM(perfumeVM);    }
+    private void clickAddPerfume() {
+        prepareCreationWindow(PERFUME);
+    }
+
+
+    private void prepareCreationWindow(int code) {
+        Stage creationWindowStage = new Stage();
+        creationWindowStage.initOwner(productsVMLV.getScene().getWindow());
+        creationWindowStage.initModality(Modality.WINDOW_MODAL);
+
+        ProductCreationWindow controller = initProductCreationWindow(creationWindowStage);
+
+        String name = controller.getProductVMName();
+        String priceString = controller.getProductVMPrice();
+
+        try {
+            if (name != null && priceString != null) {
+                addProductVMToShop(name, priceString, code);
+            }
+        } catch (NumberFormatException ex) {
+            new Alert(Alert.AlertType.ERROR,
+                    "could not parse PRICE as a number, please try again",
+                    ButtonType.OK)
+                    .setHeaderText("yikes");
+        }
+    }
+
+    private void addProductVMToShop(String name, String priceString, int code) {
+
+        if (code == GARMENT) {
+            shopVM.addGarmentVM(new GarmentVM(name, Double.valueOf(priceString)));
+        }
+        if (code == PERFUME) {
+            shopVM.addPerfumeVM(new PerfumeVM(name, Double.valueOf(priceString)));
+
+        }
+    }
+
+    private ProductCreationWindow initProductCreationWindow(Stage creationWindowStage) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ProductCreationWindow.fxml"));
+        ProductCreationWindow controller = new ProductCreationWindow();
+
+        loader.setController(controller);
+
+        try {
+            creationWindowStage.setScene(new Scene(loader.load()));
+            creationWindowStage.showAndWait();
+        } catch (IOException e) {
+            new Alert(Alert.AlertType.ERROR,
+                    "error while opening product creation window",
+                    ButtonType.OK)
+                    .setHeaderText("woopsie");
+        }
+
+        return controller;
+    }
+
 
     @FXML
-    private void removeProduct() {
+    private void clickRemoveProduct() {
         shopVM.removeProduct(productsVMLV.getSelectionModel().getSelectedItem());
     }
 
     @FXML
     private void initialize() {
         shopVM = new ShopVM();
-
+//        shopVM.getProductsVM().forEach(System.out::println);
         productsVMLV.itemsProperty().bind(shopVM.productsVMProperty());
-
         addListenerProductsVMLV();
-
-        setCellFactoryProductsVMLV();
-
+        productsVMLV.setCellFactory(__ -> new ProductCell());
     }
 
     private void addListenerProductsVMLV() {
@@ -67,21 +120,6 @@ public class MainWindow {
             if (newV != null) {
                 nameTF.textProperty().bindBidirectional(newV.nameProperty());
                 priceTF.textProperty().bindBidirectional(newV.priceProperty(), new NumberStringConverter());
-            }
-        });
-    }
-
-    private void setCellFactoryProductsVMLV() {
-        productsVMLV.setCellFactory(__ -> new ListCell<>() {
-            @Override
-            protected void updateItem(ProductVM item, boolean empty) {
-                super.updateItem(item, empty);
-                if (!empty) {
-                    textProperty().bind(item.nameProperty());
-                } else {
-                    textProperty().unbind();
-                    setText("");
-                }
             }
         });
     }
