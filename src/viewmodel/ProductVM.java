@@ -22,7 +22,7 @@ public class ProductVM implements PropertyChangeListener {
     public ProductVM(String name, Double price) {
         model = new Product();
 
-        //loads
+        //loads / sets
         setName(name == null ? model.getName() : name);
         setPrice(price == null ? model.getPrice() : price);
 
@@ -70,17 +70,6 @@ public class ProductVM implements PropertyChangeListener {
         if (evt.getPropertyName().equals(PROP_PRODUCT_PRICE)) {
             setPrice((Double) evt.getNewValue());
         }
-    }
-
-
-    @Override
-    public int hashCode() {
-        return getName().hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return obj instanceof ProductVM && ((ProductVM) obj).getName().equals(getName());
     }
 }
 

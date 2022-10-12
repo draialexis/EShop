@@ -71,7 +71,9 @@ public class Product implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Product && ((Product) obj).getName().equals(getName());
+        return obj instanceof Product
+               && ((Product) obj).getName() != null
+               && ((Product) obj).getName().equals(getName());
     }
 
 }

@@ -12,6 +12,7 @@
             <ListView fx:id="productsVMLV"/>
             <Button onAction="#clickAddGarment" text="Add garment"/>
             <Button onAction="#clickAddPerfume" text="Add perfume"/>
+            <Button onAction="#clickAddProduct" text="Add product"/>
             <Button onAction="#clickRemoveProduct" text="Remove product"/>
         </VBox>
     </center>

@@ -19,6 +19,7 @@ public class MainWindow {
 
     private final static int GARMENT = 0;
     private final static int PERFUME = 1;
+
     @FXML
     private HBox detailHBox;
     @FXML
@@ -46,6 +47,13 @@ public class MainWindow {
     @FXML
     private void clickAddPerfume() {
         prepareCreationWindow(PERFUME);
+    }
+
+    @FXML
+    private void clickAddProduct() {
+
+        viewmodel.addGarmentVM(new GarmentVM("no_name", 0.0));
+
     }
 
 
@@ -123,4 +131,5 @@ public class MainWindow {
             }
         });
     }
+
 }

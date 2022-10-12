@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class ShopVM implements PropertyChangeListener {
 
-    private final Shop model;
+    private Shop model;
 
     public Shop getModel() {
         return model;
@@ -25,33 +25,29 @@ public class ShopVM implements PropertyChangeListener {
 
     private final ObservableList<ProductVM> productsVMObs = FXCollections.observableArrayList();
     private final ListProperty<ProductVM> productsVM = new SimpleListProperty<>(productsVMObs);
-    public ObservableList<ProductVM> getProductsVM() { return FXCollections.unmodifiableObservableList(productsVM.get()); }
-    public ReadOnlyListProperty<ProductVM> productsVMProperty() { return productsVM; }
+    public ObservableList<ProductVM> getProductsVM() {return FXCollections.unmodifiableObservableList(productsVM.get());}
+    public ReadOnlyListProperty<ProductVM> productsVMProperty() {return productsVM;}
 
     public ShopVM() {
-        Shop tmpModel;
 
         try {
             System.out.println("trying real load");
-            tmpModel = new Loader().load();
-        } catch (IOException | ClassNotFoundException e) {
-            System.err.println(e.getMessage());
-            e.printStackTrace();
+            model = new Loader().load();
+        } catch (IOException | ClassNotFoundException ex1) {
             try {
                 System.out.println("trying stub load");
-                tmpModel = new Stub().load();
-            } catch (IOException | ClassNotFoundException ex) {
+                model = new Stub().load();
+            } catch (IOException | ClassNotFoundException ex2) {
                 System.out.println("giving up load and creating new");
-                tmpModel= new Shop();
+                model = new Shop();
             }
         }
 
-        //loads
-        model = tmpModel;
-        model.getProducts().forEach(p -> productsVMObs.add(new ProductVM(p.getName(), p.getPrice())));
-
         //subscribes
         model.addListener(this);
+
+        //loads
+        model.getProducts().forEach(p -> productsVMObs.add(new ProductVM(p.getName(), p.getPrice())));
 
         //will update with its methods
     }
@@ -59,16 +55,19 @@ public class ShopVM implements PropertyChangeListener {
     public void removeProduct(ProductVM productVM) {
         productsVMObs.remove(productVM);
         getModel().removeProduct(productVM.getModel());
+        printModel();
     }
 
     public void addGarmentVM(GarmentVM garmentVM) {
         productsVMObs.add(garmentVM);
         getModel().addProduct(garmentVM.getModel());
+        printModel();
     }
 
     public void addPerfumeVM(PerfumeVM perfumeVM) {
         productsVMObs.add(perfumeVM);
         getModel().addProduct(perfumeVM.getModel());
+        printModel();
     }
 
     public void save() throws IOException {
@@ -76,14 +75,16 @@ public class ShopVM implements PropertyChangeListener {
         saver.save(getModel());
     }
 
+    private void printModel() {
+        System.out.println("printing model.................");
+        getModel().getProducts().forEach(p -> System.out.println(p.getName() + " : " + p.getPrice()));
+    }
+
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         if (evt.getPropertyName().equals(Shop.PROP_SHOP_ADD)) {
             ProductVM pvm = new ProductVM(evt.getNewValue());
-            productsVMObs.add(
-                    ((IndexedPropertyChangeEvent) evt).getIndex(),
-                    pvm
-            );
+            productsVMObs.add(((IndexedPropertyChangeEvent) evt).getIndex(), pvm);
         }
         if (evt.getPropertyName().equals(Shop.PROP_SHOP_RMV)) {
             productsVMObs.remove(new ProductVM(evt.getOldValue())); // redefined equals an toHash
