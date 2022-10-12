@@ -2,6 +2,8 @@ package data;
 
 import model.Shop;
 
-interface Loadable {
-    Shop load();
+import java.io.IOException;
+
+public interface Loadable {
+    Shop load() throws IOException, ClassNotFoundException;
 }

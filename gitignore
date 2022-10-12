@@ -41,6 +41,9 @@
 # *.iml
 # *.ipr
 
+#iut
+*.bin
+
 # CMake
 cmake-build-*/
 

@@ -3,10 +3,12 @@ package data;
 import model.*;
 import util.Size;
 
+import java.io.IOException;
+
 public class Stub implements Loadable {
 
     @Override
-    public Shop load() {
+    public Shop load() throws IOException, ClassNotFoundException {
         Shop shop = new Shop();
 
         Garment p1 = new Garment("shirt", 15.9);

@@ -1,12 +1,10 @@
 package model;
 
-import org.w3c.dom.css.CSSFontFaceRule;
-
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.util.UUID;
+import java.io.Serializable;
 
-public class Product {
+public class Product implements Serializable {
 
     private String name;
 
@@ -27,11 +25,12 @@ public class Product {
     public void setName(String name) {
         String oldV = getName();
         this.name = name;
-        support.firePropertyChange(
+        getSupport().firePropertyChange(
                 PROP_PRODUCT_NAME,
                 oldV,
                 getName()
         );
+        System.out.println("set my name to " + name);
     }
 
     public double getPrice() {
@@ -41,20 +40,38 @@ public class Product {
     public void setPrice(double price) {
         Double oldV = getPrice();
         this.price = price;
-        support.firePropertyChange(
+        getSupport().firePropertyChange(
                 PROP_PRODUCT_PRICE,
                 oldV,
                 getPrice()
         );
+        System.out.println("set my price to " + price);
     }
 
-    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
-    public static final String PROP_PRODUCT_NAME = UUID.randomUUID().toString();
-    public static final String PROP_PRODUCT_PRICE = UUID.randomUUID().toString();
+    private PropertyChangeSupport support;
+
+    public PropertyChangeSupport getSupport() {
+        if(support == null) {
+            support = new PropertyChangeSupport(this);
+        }
+        return support;
+    }
+
+    public static final String PROP_PRODUCT_NAME = "model.product.name";
+    public static final String PROP_PRODUCT_PRICE = "model.product.price";
 
     public void addListener(PropertyChangeListener listener) {
-        support.addPropertyChangeListener(listener);
+        getSupport().addPropertyChangeListener(listener);
     }
 
+    @Override
+    public int hashCode() {
+        return getName().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Product && ((Product) obj).getName().equals(getName());
+    }
 
 }

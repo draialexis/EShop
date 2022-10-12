@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39201d7d-d87b-4c10-b0b0-e462b4f0b033" name="Changes" comment=":construction: WIP">
-      <change beforePath="$PROJECT_DIR$/out/production/EShop/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EShop/fxml/MainWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EShop/model/Garment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EShop/model/Garment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EShop/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EShop/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EShop/model/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EShop/model/Shop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EShop/viewmodel/GarmentVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EShop/viewmodel/GarmentVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EShop/viewmodel/PerfumeVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EShop/viewmodel/PerfumeVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EShop/viewmodel/ProductVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EShop/viewmodel/ProductVM.class" afterDir="false" />
+    <list default="true" id="39201d7d-d87b-4c10-b0b0-e462b4f0b033" name="Changes" comment="🙈 Update gitignore">
+      <change afterPath="$PROJECT_DIR$/src/data/Loader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/Savable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/Saver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Loadable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Loadable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Stub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Stub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/launcher/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/launcher/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/ProductVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ProductVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/ShopVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ShopVM.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +28,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,16 +59,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="viewmodel" />
@@ -127,7 +136,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665408691947</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="🙈 Update gitignore">
+      <created>1665574402609</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665574402609</updated>
+    </task>
+    <task id="LOCAL-00008" summary="🙈 Update gitignore">
+      <created>1665574505216</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665574505216</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +169,7 @@
     <MESSAGE value=":necktie: Code the model" />
     <MESSAGE value=":construction: Set up View and VM" />
     <MESSAGE value=":construction: WIP" />
-    <option name="LAST_COMMIT_MESSAGE" value=":construction: WIP" />
+    <MESSAGE value=" Update gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Update gitignore" />
   </component>
 </project>

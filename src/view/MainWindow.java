@@ -1,8 +1,5 @@
 package view;
 
-import com.sun.scenario.effect.impl.sw.java.JSWBlend_SRC_OUTPeer;
-import javafx.beans.property.Property;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,7 +28,15 @@ public class MainWindow {
     @FXML
     private ListView<ProductVM> productsVMLV;
 
-    private ShopVM shopVM;
+    private final ShopVM viewmodel;
+
+    public MainWindow(ShopVM viewmodel) {
+        this.viewmodel = viewmodel;
+    }
+
+    public MainWindow() {
+        this(new ShopVM());
+    }
 
     @FXML
     private void clickAddGarment() {
@@ -51,29 +56,28 @@ public class MainWindow {
 
         ProductCreationWindow controller = initProductCreationWindow(creationWindowStage);
 
-        String name = controller.getProductVMName();
-        String priceString = controller.getProductVMPrice();
-
         try {
-            if (name != null && priceString != null) {
-                addProductVMToShop(name, priceString, code);
+            if (controller.getProductVMName() != null
+                    && controller.getProductVMPrice() != null) {
+                addProductVMToShop(
+                        controller.getProductVMName(),
+                        controller.getProductVMPrice(),
+                        code);
             }
         } catch (NumberFormatException ex) {
             new Alert(Alert.AlertType.ERROR,
                     "could not parse PRICE as a number, please try again",
                     ButtonType.OK)
-                    .setHeaderText("yikes");
+                    .setHeaderText(null);
         }
     }
 
     private void addProductVMToShop(String name, String priceString, int code) {
-
         if (code == GARMENT) {
-            shopVM.addGarmentVM(new GarmentVM(name, Double.valueOf(priceString)));
+            viewmodel.addGarmentVM(new GarmentVM(name, Double.valueOf(priceString)));
         }
         if (code == PERFUME) {
-            shopVM.addPerfumeVM(new PerfumeVM(name, Double.valueOf(priceString)));
-
+            viewmodel.addPerfumeVM(new PerfumeVM(name, Double.valueOf(priceString)));
         }
     }
 
@@ -90,23 +94,19 @@ public class MainWindow {
             new Alert(Alert.AlertType.ERROR,
                     "error while opening product creation window",
                     ButtonType.OK)
-                    .setHeaderText("woopsie");
+                    .setHeaderText(null);
         }
-
         return controller;
     }
 
-
     @FXML
     private void clickRemoveProduct() {
-        shopVM.removeProduct(productsVMLV.getSelectionModel().getSelectedItem());
+        viewmodel.removeProduct(productsVMLV.getSelectionModel().getSelectedItem());
     }
 
     @FXML
     private void initialize() {
-        shopVM = new ShopVM();
-//        shopVM.getProductsVM().forEach(System.out::println);
-        productsVMLV.itemsProperty().bind(shopVM.productsVMProperty());
+        productsVMLV.itemsProperty().bind(viewmodel.productsVMProperty());
         addListenerProductsVMLV();
         productsVMLV.setCellFactory(__ -> new ProductCell());
     }
