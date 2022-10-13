@@ -16,6 +16,7 @@ public class Product implements Serializable {
     }
 
     public Product() {
+        this(null, 0.0);
     }
 
     public String getName() {
@@ -30,7 +31,6 @@ public class Product implements Serializable {
                 oldV,
                 getName()
         );
-        System.out.println("set my name to " + name);
     }
 
     public double getPrice() {
@@ -45,7 +45,6 @@ public class Product implements Serializable {
                 oldV,
                 getPrice()
         );
-        System.out.println("set my price to " + price);
     }
 
     private PropertyChangeSupport support;
@@ -62,18 +61,6 @@ public class Product implements Serializable {
 
     public void addListener(PropertyChangeListener listener) {
         getSupport().addPropertyChangeListener(listener);
-    }
-
-    @Override
-    public int hashCode() {
-        return getName().hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return obj instanceof Product
-               && ((Product) obj).getName() != null
-               && ((Product) obj).getName().equals(getName());
     }
 
 }

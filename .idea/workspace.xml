@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39201d7d-d87b-4c10-b0b0-e462b4f0b033" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Loader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/Saver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Saver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
@@ -93,7 +92,7 @@
       <workItem from="1665590389139" duration="2198000" />
       <workItem from="1665651119385" duration="53000" />
       <workItem from="1665652739206" duration="91000" />
-      <workItem from="1665679173344" duration="5011000" />
+      <workItem from="1665679173344" duration="5345000" />
     </task>
     <task id="LOCAL-00001" summary=":truck: Set up main window">
       <created>1665143728540</created>
@@ -158,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665592583787</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary=":bug:">
+      <created>1665687943184</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665687943184</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +188,8 @@
     <MESSAGE value=":construction: WIP" />
     <MESSAGE value=" Update gitignore" />
     <MESSAGE value=":poop: Produce bad code that doesn't work&#10;&#10;I think we're looking at a restart in the near future" />
-    <option name="LAST_COMMIT_MESSAGE" value=":poop: Produce bad code that doesn't work&#10;&#10;I think we're looking at a restart in the near future" />
+    <MESSAGE value=":bug:" />
+    <option name="LAST_COMMIT_MESSAGE" value=":bug:" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

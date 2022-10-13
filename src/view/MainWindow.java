@@ -52,7 +52,7 @@ public class MainWindow {
     @FXML
     private void clickAddProduct() {
 
-        viewmodel.addGarmentVM(new GarmentVM("no_name", 0.0));
+        viewmodel.addGarmentVM(new GarmentVM());
 
     }
 
@@ -76,7 +76,7 @@ public class MainWindow {
             new Alert(Alert.AlertType.ERROR,
                     "could not parse PRICE as a number, please try again",
                     ButtonType.OK)
-                    .setHeaderText(null);
+                    .show();
         }
     }
 
@@ -99,10 +99,11 @@ public class MainWindow {
             creationWindowStage.setScene(new Scene(loader.load()));
             creationWindowStage.showAndWait();
         } catch (IOException e) {
+            e.printStackTrace();
             new Alert(Alert.AlertType.ERROR,
                     "error while opening product creation window",
                     ButtonType.OK)
-                    .setHeaderText(null);
+                    .show();
         }
         return controller;
     }

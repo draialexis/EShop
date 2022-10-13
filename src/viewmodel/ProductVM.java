@@ -1,6 +1,9 @@
 package viewmodel;
 
-import javafx.beans.property.*;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import model.Product;
 
 import java.beans.PropertyChangeEvent;
@@ -19,12 +22,18 @@ public class ProductVM implements PropertyChangeListener {
 
     private final StringProperty name = new SimpleStringProperty();
 
-    public ProductVM(String name, Double price) {
-        model = new Product();
+    public ProductVM(Object obj) {
+        //loads
 
-        //loads / sets
-        setName(name == null ? model.getName() : name);
-        setPrice(price == null ? model.getPrice() : price);
+        if (obj instanceof Product) {
+            model = (Product) obj;
+        }
+        else {
+            model = new Product();
+        }
+
+        setName(model.getName());
+        setPrice(model.getPrice());
 
         //subscribes
         model.addListener(this);
@@ -34,9 +43,12 @@ public class ProductVM implements PropertyChangeListener {
         priceProperty().addListener((__, ___, newV) -> model.setPrice((Double) newV));
     }
 
-    public ProductVM(Object o) {
-        this(o != null ? ((Product) o).getName() : null,
-                o != null ? ((Product) o).getPrice() : null);
+    public ProductVM() {
+        this(null);
+    }
+
+    public ProductVM(String name, Double price) {
+        this(new Product(name, price));
     }
 
     public String getName() {
@@ -60,7 +72,6 @@ public class ProductVM implements PropertyChangeListener {
     }
 
     public void setPrice(double price) {this.price.set(price);}
-
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
