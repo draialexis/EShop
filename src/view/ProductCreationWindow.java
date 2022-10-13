@@ -3,6 +3,7 @@ package view;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 public class ProductCreationWindow {
 
@@ -10,7 +11,7 @@ public class ProductCreationWindow {
     private String productVMPrice = null;
 
     @FXML
-    private HBox formHBox;
+    private VBox formVBox;
     @FXML
     private TextField nameTF;
     @FXML

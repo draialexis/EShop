@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39201d7d-d87b-4c10-b0b0-e462b4f0b033" name="Changes" comment="🙈 Update gitignore">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="39201d7d-d87b-4c10-b0b0-e462b4f0b033" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EShop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/MainWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Saver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Saver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/GarmentVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/GarmentVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ProductVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ProductVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ShopVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ShopVM.java" afterDir="false" />
     </list>
@@ -89,7 +90,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665142782644</updated>
-      <workItem from="1665590389139" duration="1956000" />
+      <workItem from="1665590389139" duration="2198000" />
+      <workItem from="1665651119385" duration="53000" />
+      <workItem from="1665652739206" duration="91000" />
+      <workItem from="1665679173344" duration="5011000" />
     </task>
     <task id="LOCAL-00001" summary=":truck: Set up main window">
       <created>1665143728540</created>
@@ -147,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665574505216</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary=":poop: Produce bad code that doesn't work&#10;&#10;I think we're looking at a restart in the near future">
+      <created>1665592583787</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1665592583787</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +181,18 @@
     <MESSAGE value=":construction: Set up View and VM" />
     <MESSAGE value=":construction: WIP" />
     <MESSAGE value=" Update gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Update gitignore" />
+    <MESSAGE value=":poop: Produce bad code that doesn't work&#10;&#10;I think we're looking at a restart in the near future" />
+    <option name="LAST_COMMIT_MESSAGE" value=":poop: Produce bad code that doesn't work&#10;&#10;I think we're looking at a restart in the near future" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/Shop.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
